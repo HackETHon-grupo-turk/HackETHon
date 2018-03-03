@@ -1,5 +1,5 @@
-var Tarea1 = artifacts.require("Tarea1");
+var Tarea2 = artifacts.require("Tarea2");
 
 module.exports = function(deployer) {
-  deployer.deploy(Tarea1);
+  deployer.deploy(Tarea2);
 };
