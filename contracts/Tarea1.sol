@@ -1,0 +1,19 @@
+pragma solidity ^0.4.19;
+contract Tarea1 {
+
+address[16] public jobSeeker;
+bool inglesRquired = true;
+uint nivelestudios = 1;
+
+function solicita_tarea (uint jobId, bool ingles) public returns (uint)  {
+  require(jobId >= 0 && jobId <= 7 && inglesRquired == ingles);
+    //solicitante = u;
+    jobSeeker[jobId] = msg.sender;
+    return jobId;
+    }
+
+// Retrieving the job seekers
+function getJobSeekers() public view returns (address[16]) {
+      return jobSeeker;
+    }
+}

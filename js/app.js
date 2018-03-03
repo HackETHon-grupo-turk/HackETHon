@@ -37,13 +37,13 @@ App = {
   },
 
   initContract: function() {
-    $.getJSON('Adoption.json', function(data) {
+    $.getJSON('Tarea1.json', function(data) {
       // Get the necessary contract artifact file and instantiate it with truffle-contract
-      var AdoptionArtifact = data;
-      App.contracts.Adoption = TruffleContract(AdoptionArtifact);
+      var Tarea1Artifact = data;
+      App.contracts.Tarea1 = TruffleContract(Tarea1Artifact);
 
       // Set the provider for our contract
-      App.contracts.Adoption.setProvider(App.web3Provider);
+      App.contracts.Tarea1.setProvider(App.web3Provider);
 
       // Use our contract to retrieve and mark the adopted pets
       return App.markAdopted();
@@ -59,7 +59,7 @@ App = {
   markAdopted: function(adopters, account) {
     var adoptionInstance;
 
-    App.contracts.Adoption.deployed().then(function(instance) {
+    App.contracts.Tarea1.deployed().then(function(instance) {
       adoptionInstance = instance;
 
       return adoptionInstance.getAdopters.call();
@@ -88,7 +88,7 @@ App = {
 
       var account = accounts[0];
 
-      App.contracts.Adoption.deployed().then(function(instance) {
+      App.contracts.Tarea1.deployed().then(function(instance) {
         adoptionInstance = instance;
 
         // Execute adopt as a transaction by sending account
