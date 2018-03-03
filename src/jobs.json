@@ -1,19 +1,19 @@
 [
   {
     "id": 0,
-    "name": "Audio editing and transcription",
-    "picture": "images/Natural-Voice.png",
+    "name": "Edición de audio y transcripción",
+    "picture": "images/audio.png",
     "price": 3,
-    "description": "Edit my important audio file",
-    "skills": "Audio, editing"
+    "description": "Editar mp3 y realizar resumen",
+    "skills": "Inglés C1, Nivel estudios 1"
   },
   {
     "id": 1,
-    "name": "Audio editing and transcription",
-    "picture": "images/Natural-Voice.png",
+    "name": "Comprobar contenidos en vídeo",
+    "picture": "images/images.png",
     "price": 3,
-    "description": "Edit my important audio file",
-    "skills": "Audio, editing"
+    "description": "Comprobar que hay contenidos de un tipo en vídeos Youtube",
+    "skills": "Vídeo, Nivel estudios 1"
   },
   {
     "id": 2,
