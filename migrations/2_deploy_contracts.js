@@ -1,5 +1,5 @@
-var Adoption = artifacts.require("Adoption");
+var Tarea1 = artifacts.require("Tarea1");
 
 module.exports = function(deployer) {
-  deployer.deploy(Adoption);
+  deployer.deploy(Tarea1);
 };

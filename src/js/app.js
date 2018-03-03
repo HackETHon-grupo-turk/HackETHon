@@ -56,19 +56,18 @@ App = {
     $(document).on('click', '.btn-apply', App.handleAdopt);
   },
 
-  markAdopted: function(adopters, account) {
+  markAdopted: function(adopter, account) {
     var adoptionInstance;
 
     App.contracts.Tarea1.deployed().then(function(instance) {
       adoptionInstance = instance;
 
-      return adoptionInstance.getJobSeekers.call();
-    }).then(function(adopters) {
-      for (i = 0; i < adopters.length; i++) {
-        if (adopters[i] !== '0x0000000000000000000000000000000000000000') {
-          $('.panel-pet').eq(i).find('button').text('Success').attr('disabled', true);
-        }
-      }
+      return adoptionInstance.getJobSeeker.call();
+    }).then(function(adopter) {
+      adoptionInstance.getId.call().then(function(pos){
+            if (adopter !== '0x0000000000000000000000000000000000000000') {
+                $('.panel-pet').eq(pos).find('button').text('Success').attr('disabled', true);
+              }})
     }).catch(function(err) {
       console.log(err.message);
     });
@@ -77,7 +76,8 @@ App = {
   handleAdopt: function(event) {
     event.preventDefault();
 
-    var petId = parseInt($(event.target).data('id'));
+    var nivelestudios = 4;
+    var ingles = true;
 
     var adoptionInstance;
 
@@ -92,7 +92,7 @@ App = {
         adoptionInstance = instance;
 
         // Execute adopt as a transaction by sending account
-        caca = adoptionInstance.solicita_tarea(petId, true, {from: account});
+        caca = adoptionInstance.apply(nivelestudios, ingles, {from: account});
         console.log(caca);
         return caca
       }).then(function(result) {

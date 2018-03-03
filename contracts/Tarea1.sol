@@ -1,19 +1,23 @@
 pragma solidity ^0.4.19;
 contract Tarea1 {
 
-address[16] public jobSeeker;
+address jobSeeker;
 bool inglesRquired = true;
-uint nivelestudios = 1;
+uint nivelestudiosRequired = 1;
+uint id = 0;
 
-function solicita_tarea (uint jobId, bool ingles) public returns (uint)  {
-  require(jobId >= 0 && jobId <= 7 && inglesRquired == ingles);
-    //solicitante = u;
-    jobSeeker[jobId] = msg.sender;
-    return jobId;
+function apply (uint nivelestudios, bool ingles) public returns (bool)  {
+  require(nivelestudiosRequired == nivelestudios && inglesRquired == ingles);
+    jobSeeker = msg.sender;
+    return true;
     }
 
 // Retrieving the job seekers
-function getJobSeekers() public view returns (address[16]) {
+function getJobSeeker() public view returns (address) {
       return jobSeeker;
     }
+
+function getId() public view returns (uint) {
+          return id;
+        }
 }
